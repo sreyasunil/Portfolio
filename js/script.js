@@ -56,8 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Back to top — show after scrolling 400px
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+     backToTop.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
 });
+
+
 // Copy to clipboard
+
 function copyText(text, btn) {
   navigator.clipboard.writeText(text).then(() => {
     btn.classList.add('copied');

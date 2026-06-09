@@ -157,6 +157,9 @@ nav.stuck {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 1px; background: var(--line); border: 1px solid var(--line);
 }
+.fc:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 .fc { background: var(--card); padding: 28px 26px; transition: background 0.2s; }
 .fc:hover { background: var(--hover); }
 .fc-icon {
@@ -382,4 +385,22 @@ footer {
   .skills-layout { grid-template-columns: 1fr; }
   .edu-strip-cgpa { text-align: left; }
   footer { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+  position: fixed; bottom: 32px; right: 32px;
+  width: 44px; height: 44px; border-radius: 3px;
+  background: var(--card); border: 1px solid var(--line2);
+  color: var(--sub); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  opacity: 0; visibility: hidden;
+  z-index: 99;
+}
+.back-to-top.visible {
+  opacity: 1; visibility: visible;
+}
+.back-to-top:hover {
+  background: var(--hover); border-color: var(--sub); color: var(--white);
 }
