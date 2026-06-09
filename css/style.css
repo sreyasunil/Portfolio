@@ -96,9 +96,13 @@ nav.stuck {
   font-family: var(--serif);
   font-size: clamp(64px, 11vw, 130px);
   font-weight: 400; line-height: 0.95;
-  color: var(--white); letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
   margin-bottom: 36px;
   opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards;
+  background: linear-gradient(135deg, #f2f2f8, #7fffb2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-name em { font-style: italic; color: var(--sub); }
 

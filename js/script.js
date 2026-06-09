@@ -21,6 +21,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.08 });
 
+  /* ── Spotlight Effect ── */
+const spotlight = document.createElement('div');
+spotlight.style.cssText = `
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(127,255,178,0.06) 0%, transparent 70%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+`;
+document.body.appendChild(spotlight);
+
+document.addEventListener('mousemove', (e) => {
+  spotlight.style.left = e.clientX + 'px';
+  spotlight.style.top  = e.clientY + 'px';
+  spotlight.style.opacity = '1';
+});
+
+document.addEventListener('mouseleave', () => {
+  spotlight.style.opacity = '0';
+});
+
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
   /* ── 3. Learning bar animations ── */
